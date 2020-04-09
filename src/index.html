@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+  index.html
+  Isolation Round-Robin Telecom App
+  Wyoming Technology Coronavirus Coalition, 2020
+  Cameron Whiting, Cody Fagley, Rafer Cooley
+-->
+
+<!--
+  This file contains all "Landing Page" code
+  i.e. Code that is first executed when user connects to app
+-->
+
+<head>
+  <meta charset="utf-8">
+  <!-- Other Meta Traits -->
+  
+  <!-- Change Me! -->
+  <title>Isolation Round-Robin Telecom App</title>
+
+  <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+
+  <!-- Change Me! -->
+  <h1>Isolation Round-Robin Telecom App</h1>
+
+  <div id="container">
+
+    <video id="gum-local" autoplay playsinline></video>
+    <button id="showVideo">Open camera</button>
+
+    <div id="errorMsg"></div>
+
+    <p class="warning"><strong>Warning:</strong> if you're not using headphones, pressing play will cause feedback.</p>
+
+    <p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>
+
+    <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in
+        global scope, so you can inspect it from the console.</p>
+
+    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/gum"
+       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+</div>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="dynamic/app.js"></script>
+
+
+</body>
+
