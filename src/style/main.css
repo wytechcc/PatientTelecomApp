@@ -6,6 +6,11 @@
 
 /*
   Stylistic definitions that should affect EVERY page in the app
+
+
+  Table of Contents
+  =================
+  1.) General User Interface Features
 */
 
 html, body
@@ -14,5 +19,14 @@ html, body
   height: 100%;
 }
 
+
+/*
+  1.) General User Interface Features
+*/
+
+.appButtonText
+{
+  text-decoration: none;
+}
 
 
