@@ -1,0 +1,25 @@
+{
+  "name": "patient-telecom-app",
+  "version": "0.0.2",
+  "description": "Web application for connecting isolated patients with someone to talk to",
+  "license": "MIT",
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wytechcc/PatientTelecomApp.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/wytechcc/PatientTelecomApp/issues"
+  },
+  "homepage": "https://github.com/wytechcc/PatientTelecomApp#readme"
+}
