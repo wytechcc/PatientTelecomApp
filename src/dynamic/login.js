@@ -12,6 +12,7 @@
   =================
   1.) Navigation
   2.) Authentication
+  3.) Login Button
 */
 
 
@@ -23,19 +24,22 @@ app.use(express.static(__dirname)) //since the index.html and probably pongClien
 /*
   1.) Navigation
 */
-const buttonLogin = document.getElementById('buttonLogin')
-buttonLogin.addEventListener('click', function(e) {
-  // viewed at http://localhost:8080
-  app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/src/app.html'));
-  });
-});
-
-
 function servePage(pageref)
 {
-  // viewed at http://localhost:8080
+  // viewed at http://localhost:3000 + pageref
   app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + pageref));
   });
 };
+
+
+/*
+  3.) Login Button
+*/
+const buttonLogin = document.getElementById('buttonLogin')
+buttonLogin.addEventListener('click', function(e) 
+{
+
+  servePage('/src/app.html')
+});
+
