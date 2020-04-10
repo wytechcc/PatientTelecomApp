@@ -14,11 +14,12 @@
 <!-- 
   TODO List:
     * Add Second-Factor Authentication
-    * Stylistic Properties
+    * Stylistic Changes
 -->
 
 <head>
   <link rel="stylesheet" href="src/style/main.css">
+  <script src="dynamic/index.js"></script>
 </head>
 
 <body>
@@ -28,9 +29,10 @@
   <label for="password">Password:</label>
   <input type="password" id="password" name="password"><br><br>
 
-  <button class="appButton">
+  <button class="appButton buttonLogin" id="buttonLogin">
     <!-- TODO: Add JS call for checking authentication -->
-    <a class="appButtonText" href="src/app.html">Proceed</a>
+    <a class="appButtonText" href="app.html">Proceed</a>
   </button>
+
 </body>
 
