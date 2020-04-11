@@ -16,10 +16,6 @@
 */
 
 
-var app = require('express')();
-
-app.use(express.static(__dirname)) //since the index.html and probably pongClient.html are in the current directory based on your code.
-
 
 /*
   1.) Navigation
@@ -39,7 +35,7 @@ function servePage(pageref)
 const buttonLogin = document.getElementById('buttonLogin')
 buttonLogin.addEventListener('click', function(e) 
 {
-
-  servePage('/src/app.html')
+  //  TODO:  Add second 
+  servePage('/src/client.html')
 });
 

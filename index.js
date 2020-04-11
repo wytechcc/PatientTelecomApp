@@ -4,11 +4,32 @@
   Wyoming Technology Coronavirus Coalition
 */
 
+/*
+  Contains Node.js Server-side Functionality
+
+
+  Table of Contents
+  =================
+  1.) Pre-Construction
+    1.a) Default Port
+    1.b) Subdirectory Access
+  2.) Server Initialization
+    2.a) Serve Login Page
+    2.b) Listen to Socket/Port
+*/
+
 // content of index.js
 const express = require('express')
-const path = require('path')
-
 const app = express()
+
+const path = require('path')
+const http = require("http");
+const server = http.createServer(app);
+const io = require("socket.io")(server);
+
+/*
+  1.) Pre-Construction
+*/
 
 //  Default Socket Port (Server)
 //  Change to serve on different port

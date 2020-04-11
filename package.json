@@ -1,11 +1,12 @@
 {
   "name": "patient-telecom-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Web application for connecting isolated patients with someone to talk to",
   "license": "MIT",
   "dependencies": {
     "express": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "ws": "*"
   },
   "main": "index.js",
   "devDependencies": {},
