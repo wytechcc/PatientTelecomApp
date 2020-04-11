@@ -19,5 +19,12 @@ This guide assumes you are running the Node.js server locally on a Linux machine
 [user@host]$    npm start
 ```
 
+###  Generating cert & key
+
+You will need to generate a certificate and key for hosting the server.  To do so, run the following command from the root of the project directory.
+
+```
+[user@host]$  openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+```
 
 

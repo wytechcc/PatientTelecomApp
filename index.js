@@ -23,9 +23,9 @@ const express = require('express')
 const app = express()
 
 const path = require('path')
-const http = require("http");
-const server = http.createServer(app);
-const io = require("socket.io")(server);
+const http = require("http")
+const server = http.createServer(app)
+const io = require("socket.io")(server)
 
 /*
   1.) Pre-Construction
@@ -33,7 +33,7 @@ const io = require("socket.io")(server);
 
 //  Default Socket Port (Server)
 //  Change to serve on different port
-const port = 3000;
+const port = 3001;
 
 //  Give Access to 'src' Directory
 app.use(express.static(__dirname + '/src'))

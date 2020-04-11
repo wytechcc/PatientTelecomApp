@@ -16,6 +16,7 @@
 */
 
 
+const serve = require('./server')
 
 /*
   1.) Navigation
@@ -35,7 +36,6 @@ function servePage(pageref)
 const buttonLogin = document.getElementById('buttonLogin')
 buttonLogin.addEventListener('click', function(e) 
 {
-  //  TODO:  Add second 
-  servePage('/src/client.html')
+  hostVideo()
 });
 
