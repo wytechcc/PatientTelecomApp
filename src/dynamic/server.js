@@ -49,7 +49,7 @@ const handleRequest = function(request, response) {
     response.writeHead(200, {'Content-Type': 'text/css'})
     response.end(fs.readFileSync('src/style/login.css'))
     //  Client Page
-  } else if (request.url == '/client.html') {
+  } else if (request.url == '/client.html?usernameLogin=&password=') {
     response.writeHead(200, {'Content-Type': 'text/html'})
     response.end(fs.readFileSync('src/client.html'))
   } else if (request.url == '/dynamic/client.js') {
