@@ -10,18 +10,14 @@
 
   Table of Contents
   =================
-  1.) Navigation
   2.) Authentication
-  3.) Login Button
+  3.) Register Feature
 */
 
 
-/*
-  1.) Navigation
-*/
 
 /*
-  2.) Authentication
+  1.) Authentication
 */
 
 /*
@@ -32,5 +28,21 @@
 
 
 /*
-  3.) Login Button
+  2.) Register Feature
 */
+
+//  Raise Prompt
+var buttonRegister = document.getElementById("buttonRegister")
+buttonRegister.addEventListener('click', function (e) {
+  document.getElementById("formRegister").style.visibility = "visible"
+})
+
+var buttonRegisterCancel = document.getElementById("buttonRegisterCancel")
+buttonRegisterCancel.addEventListener('click', function (e) {
+  document.getElementById("formRegister").style.visibility = "hidden"
+})
+
+var buttonRegisterProceed = document.getElementById("buttonRegisterProceed")
+buttonRegisterProceed.addEventListener('click', function (e) {
+  document.getElementById("formRegister").style.visibility = "hidden"
+})

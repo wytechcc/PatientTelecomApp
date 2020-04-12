@@ -1,6 +1,6 @@
 {
   "name": "patient-telecom-app",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Web application for connecting isolated patients with someone to talk to",
   "license": "MIT",
   "dependencies": {

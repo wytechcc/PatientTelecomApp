@@ -24,16 +24,19 @@ html, body
   1.) General User Interface Features
 */
 
-/* NOTE: Lazily Placed */
-.centerPrompt
+
+/* General Form */
+.appForm
 {
-  position: fixed;
-  left: 40%;
-  top: 35%;
+  padding: 2ex;
+  border-radius: 3ex;
+  background-color: rgba(0, 0, 0, .3);
 }
 
-
-
+.appFormLine
+{
+  padding-bottom: .5ex;
+}
 
 
 

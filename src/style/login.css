@@ -10,3 +10,23 @@
 
 
 
+/* NOTE: Lazily Placed */
+.centerPrompt
+{
+  position: fixed;
+  left: 40%;  /* Lazy.... I don't know best practice here */
+  top: 35%;
+}
+
+
+.formRegister
+{
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, .95); /* Override Default Background Opacity */
+  color: white;
+  
+  position: fixed;
+  left: 40%;  /* Lazy.... I don't know best practice here */
+  top: 35%;
+}
+
