@@ -24,9 +24,16 @@ html, body
   1.) General User Interface Features
 */
 
-.appButtonText
+/* NOTE: Lazily Placed */
+.centerPrompt
 {
-  text-decoration: none;
+  position: fixed;
+  left: 40%;
+  top: 35%;
 }
+
+
+
+
 
 

@@ -14,7 +14,7 @@
 */
 
 //  Default Port
-const HTTPS_PORT = 3001;
+const HTTPS_PORT = 3000;
 
 const fs = require('fs');
 const https = require('https');
@@ -34,17 +34,32 @@ const handleRequest = function(request, response) {
   // Render the single client html file for any request the HTTP server receives
   console.log('request received: ' + request.url);
 
+  //  Login Page
   if(request.url === '/') {
-    response.writeHead(200, {'Content-Type': 'text/html'});
-    response.end(fs.readFileSync('src/client.html'));
-  } else if(request.url === '/dynamic/client.js') {
-    response.writeHead(200, {'Content-Type': 'application/javascript'});
-    response.end(fs.readFileSync('src/dynamic/client.js'));
+    response.writeHead(200, {'Content-Type': 'text/html'})
+    response.end(fs.readFileSync('src/login.html'))
+  } else if(request.url === '/dynamic/login.js') {
+    response.writeHead(200, {'Content-Type': 'application/javascript'})
+    response.end(fs.readFileSync('src/dynamic/login.js'))
+    //  Main CSS
+  } else if(request.url == '/style/main.css') {
+    response.writeHead(200, {'Content-Type': 'text/css'})
+    response.end(fs.readFileSync('src/style/main.css'))
+    //  Client Page
+  } else if (request.url == '/client.html') {
+    response.writeHead(200, {'Content-Type': 'text/html'})
+    response.end(fs.readFileSync('src/client.html'))
+  } else if (request.url == '/dynamic/client.js') {
+    response.writeHead(200, {'Content-Type': 'application/javascript'})
+    response.end(fs.readFileSync('src/dynamic/client.js'))
   }
 };
 
-const httpsServer = https.createServer(serverConfig, handleRequest);
-httpsServer.listen(HTTPS_PORT, '0.0.0.0');
+/* hostAppServer()
+      Opens Port for Video Channels
+*/
+  const httpsServer = https.createServer(serverConfig, handleRequest);
+  httpsServer.listen(HTTPS_PORT, '0.0.0.0');
 
 // ----------------------------------------------------------------------------------------
 

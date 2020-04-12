@@ -33,7 +33,7 @@ const io = require("socket.io")(server)
 
 //  Default Socket Port (Server)
 //  Change to serve on different port
-const port = 3001;
+const port = 3000;
 
 //  Give Access to 'src' Directory
 app.use(express.static(__dirname + '/src'))

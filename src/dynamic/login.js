@@ -1,5 +1,5 @@
 /*
-  index.js (HTML Counterpart)
+  login.js
   Patient Telecom App
   Wyoming Technology Coronavirus Coalition
 */
@@ -16,26 +16,21 @@
 */
 
 
-const serve = require('./server')
-
 /*
   1.) Navigation
 */
-function servePage(pageref)
-{
-  // viewed at http://localhost:3000 + pageref
-  app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + pageref));
-  });
-};
+
+/*
+  2.) Authentication
+*/
+
+/*
+  TODO:
+    * Password Verifcation
+    * Second Factor Authentication
+*/
 
 
 /*
   3.) Login Button
 */
-const buttonLogin = document.getElementById('buttonLogin')
-buttonLogin.addEventListener('click', function(e) 
-{
-  hostVideo()
-});
-

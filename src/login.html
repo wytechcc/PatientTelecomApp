@@ -18,22 +18,26 @@
 -->
 
 <head>
-  <link rel="stylesheet" href="src/style/main.css">
-  <script src="dynamic/server.js"></script>
-  <script src="dynamic/login.js"></script>
+  <link rel="stylesheet" href="style/main.css">
 </head>
 
 <body>
-  <label for="username">User(?) Name:</label>
-  <input type="text" id="username" name="username"><br>
-  <!-- TODO: Add better authentication (pref. 2-factor) -->
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password"><br><br>
+  <div class="centerPrompt">
+    <h1>Patient Telecom App</h1>
 
-  <button class="appButton buttonLogin" id="buttonLogin">
-    <!-- TODO: Add JS call for checking authentication -->
-    <a class="appButtonText" href="client.html">Proceed</a>
-  </button>
+    <label for="username">User(?) Name:</label>
+    <input type="text" id="username" name="username"><br>
+    <!-- TODO: Add better authentication (pref. 2-factor) -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
 
+    
+    <form>
+      <input type="submit" value="Login" formaction="client.html"/>
+      <button class="appButton buttonRegister" id="buttonRegister">Register</button>
+    </form>
+
+  </div>
+  <script src="dynamic/login.js"></script>
 </body>
 
