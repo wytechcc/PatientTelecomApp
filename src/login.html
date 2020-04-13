@@ -26,18 +26,27 @@
   <div class="centerPrompt">
     <h1>Patient Telecom App</h1>
 
-    <!-- Login Prompt -->
-    <form class="appForm formLogin">
+    <form class="formUser">
       <label for="usernameLogin">User Name:</label>
       <input type="text" id="usernameLogin" name="usernameLogin"><br>
       <!-- TODO: Add better authentication (pref. 2-factor) -->
       <label for="password">Password:</label>
       <input type="password" id="password" name="password"><br>
       <br>
+    </form>
 
-      <input type="submit" value="Login" formaction="client.html"/>
+    <!-- Login Prompt -->
+    <form class="formLogin">
+
+      <input type="radio" id="patient" name="user_type" value="patient">
+      <label for="patient">Patient</label><br>
+      <input type="radio" id="volunteer" name="user_type" value="volunteer">
+      <label for="volunteer">Volunteer</label><br>
+
+      <button type="submit" value="Login" formaction="client.html">Login</button>
       <button class="appButton buttonRegister" id="buttonRegister">Register</button>
     </form>
+
 
 
   </div>

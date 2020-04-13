@@ -48,14 +48,29 @@ const handleRequest = function(request, response) {
   } else if (request.url == '/style/login.css') {
     response.writeHead(200, {'Content-Type': 'text/css'})
     response.end(fs.readFileSync('src/style/login.css'))
-    //  Client Page
-  } else if (request.url == '/client.html?usernameLogin=&password=') {
+    //  Client Pages
+    //  Patient
+  } else if (request.url == '/client.html?user_type=patient') {
     response.writeHead(200, {'Content-Type': 'text/html'})
-    response.end(fs.readFileSync('src/client.html'))
-  } else if (request.url == '/dynamic/client.js') {
+    response.end(fs.readFileSync('src/patient.html'))
+  } else if (request.url == '/dynamic/patient.js') {
     response.writeHead(200, {'Content-Type': 'application/javascript'})
-    response.end(fs.readFileSync('src/dynamic/client.js'))
+    response.end(fs.readFileSync('src/dynamic/patient.js'))
+  } else if (request.url == '/style/patient.css') {
+    response.writeHead(200, {'Content-Type': 'text/css'})
+    response.end(fs.readFileSync('src/style/patient.css'))
+    //  Volunteer
+  } else if (request.url == '/client.html?user_type=volunteer') {
+    response.writeHead(200, {'Content-Type': 'text/html'})
+    response.end(fs.readFileSync('src/volunteer.html'))
+  } else if (request.url == '/dynamic/volunteer.js') {
+    response.writeHead(200, {'Content-Type': 'application/javascript'})
+    response.end(fs.readFileSync('src/dynamic/volunteer.js'))
+  } else if (request.url == '/style/volunteer.css') {
+    response.writeHead(200, {'Content-Type': 'text/css'})
+    response.end(fs.readFileSync('src/style/volunteer.css'))
   }
+
 };
 
 /* hostAppServer()

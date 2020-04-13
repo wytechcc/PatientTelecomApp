@@ -46,3 +46,6 @@ var buttonRegisterProceed = document.getElementById("buttonRegisterProceed")
 buttonRegisterProceed.addEventListener('click', function (e) {
   document.getElementById("formRegister").style.visibility = "hidden"
 })
+
+
+
