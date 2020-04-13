@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script src="dynamic/volunteer.js"></script>
+    <link rel="stylesheet" href="style/main.css">
   </head>
 
   <body>
     <h1>Volunteer Dashboard</h1>
-    <video id="localVideo" autoplay muted style="width:40%;"></video>
-    <video id="remoteVideo" autoplay style="width:40%;"></video>
+
+    <video id="remoteVideo" autoplay style="width:60%;" class="video videoOther"></video>
+    <video id="localVideo" autoplay muted style="width:12%;" class="video videoSelf"></video>
 
     <br />
 

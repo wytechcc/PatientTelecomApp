@@ -17,13 +17,16 @@ html, body
 {
   width: 100%;
   height: 100%;
+
+  /* Disable Scroll */
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 
 /*
   1.) General User Interface Features
 */
-
 
 /* General Form */
 .appForm
@@ -39,4 +42,22 @@ html, body
 }
 
 
+
+/*
+  2.) General Video Layouts
+*/
+
+.videoSelf
+{
+  position: fixed;
+  bottom: 10%;
+  right: 25%;
+}
+
+.videoOther
+{
+  position: fixed;
+  top: 10%;
+  left:20%;
+}
 
