@@ -1,3 +1,17 @@
+/* 
+  patient.js
+  Isolated Patient Telecom App
+  Wyoming Technology Coronavirus Coalition
+*/
+
+/*
+  This file contains the dynamic functionality for patient clients.  
+*/
+
+
+/*
+  Global Variables
+*/
 var localVideo;
 var localStream;
 var remoteVideo;
@@ -5,6 +19,7 @@ var peerConnection;
 var uuid;
 var serverConnection;
 
+//  Not sure what this does, so I haven't messed with it.....
 var peerConnectionConfig = {
   'iceServers': [
     {'urls': 'stun:stun.stunprotocol.org:3478'},
@@ -12,6 +27,10 @@ var peerConnectionConfig = {
   ]
 };
 
+//  
+/* pageReady()  
+    This is called by patient.html and builds a new connection to a different client via WebSocket:3001
+*/
 function pageReady() {
   uuid = createUUID();
 
@@ -101,3 +120,10 @@ function createUUID() {
 
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 }
+
+
+
+/*
+  Patient Class Object
+*/
+

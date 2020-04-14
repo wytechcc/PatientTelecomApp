@@ -8,14 +8,22 @@
   </head>
 
   <body>
-    <h1>Volunteer Dashboard</h1>
+    <!-- Navigation Bar -->
+    <ul class="navBar">
+      <li class="navBarLink"><a href="/" class="navBarText">Log Out</a></li>
+    </ul>
 
-    <video id="remoteVideo" autoplay style="width:60%;" class="video videoOther"></video>
+    <!-- Page Title -->
+    <h1 class="appTitle">Volunteer Dashboard</h1>
+
+    <!-- Video Screens (for Remote Streaming) -->
+    <video id="remoteVideo" autoplay style="width:70%; height:70%;" class="video videoOther"></video>
     <video id="localVideo" autoplay muted style="width:12%;" class="video videoSelf"></video>
 
     <br />
 
-    <input type="button" id="start" onclick="start(true)" value="Start Video"></input>
+    <!-- Start Video Button -->
+    <input type="button" id="start" onclick="start(true)" value="Start Video" class="buttonStartVideo"></input>
 
     <script type="text/javascript">
         pageReady();
