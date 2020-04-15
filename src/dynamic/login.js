@@ -10,14 +10,20 @@
 
   Table of Contents
   =================
-  2.) Authentication
-  3.) Register Feature
+  1.) Login Page Initialization
+  2.) User Management
+    2.a) Register New User
+  3.) Authentication
+    3.a) Password Authentication
+  4.) Button Event Handling
 */
 
 
+//  2.a) Register New User
+
 
 /*
-  1.) Authentication
+  3.) Authentication
 */
 
 /*
@@ -27,8 +33,9 @@
 */
 
 
+
 /*
-  2.) Register Feature
+  4.) Button Event Handling
 */
 
 //  Raise Prompt
@@ -46,6 +53,5 @@ var buttonRegisterProceed = document.getElementById("buttonRegisterProceed")
 buttonRegisterProceed.addEventListener('click', function (e) {
   document.getElementById("formRegister").style.visibility = "hidden"
 })
-
 
 

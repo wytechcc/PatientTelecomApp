@@ -28,8 +28,8 @@
     <h1>Patient Telecom App</h1>
 
     <form class="formUser">
-      <label for="usernameLogin">User Name:</label>
-      <input type="text" id="usernameLogin" name="usernameLogin"><br>
+      <label for="username">User Name:</label>
+      <input type="text" id="username" name="username"><br>
       <!-- TODO: Add better authentication (pref. 2-factor) -->
       <label for="password">Password:</label>
       <input type="password" id="password" name="password"><br>
@@ -38,16 +38,14 @@
 
     <!-- Login Prompt -->
     <form class="formLogin">
-
       <input type="radio" id="patient" name="user_type" value="patient">
       <label for="patient">Patient</label><br>
       <input type="radio" id="volunteer" name="user_type" value="volunteer">
       <label for="volunteer">Volunteer</label><br>
 
-      <button type="submit" value="Login" formaction="client.html">Login</button>
-      <button class="appButton buttonRegister" id="buttonRegister">Register</button>
+      <input type="submit" value="Login" formaction="client.html"></input>
     </form>
-
+    <button class="appButton buttonRegister" id="buttonRegister">Register</button>
 
 
   </div>

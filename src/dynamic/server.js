@@ -6,6 +6,12 @@
 
 /*
   This module is executed exactly once
+
+  1.) Config
+  2.) WebRTC
+  3.) MongoDB
+    3.a) MongoDB Initialization
+    3.b) User Management
 */
 
 
@@ -106,5 +112,127 @@ Some important notes:\n\
   * You\'ll also need to accept the invalid TLS certificate.\n\
   * Some browsers or OSs may not allow the webcam to be used by multiple pages at once. You may need to use two different browsers or machines.\n'
 );
+
+
+
+/* 
+  3.) MongoDB
+
+    This app uses a locally-stored Mongo Database for maintaining user credentials.
+    The "name"--"collection" for database access is: "_userDB"--"users"
+*/
+
+
+// app imports
+//  Express (App)
+const express = require('express')
+const session = require('express-session')
+const exphbs = require('express-handlebars')
+const app = express()
+const path = require('path');
+
+//  Mongo (Database)
+const mongoDB = require('mongodb')
+const mongoose = require('mongoose')
+const mongooseValidator = require('mongoose-unique-validator');
+
+//  Passport (Authentication)
+
+
+/* 
+  3.a) MongoDB Initialization
+*/
+
+//  Connect to Mongoose Server (Database)
+mongoose.connect('mongodb://localhost/_userDB', {useNewUrlParser: true});
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() 
+{
+  // we're connected!
+  console.log("Successfully Connected to Database")
+});
+
+
+//  User Types
+const user_type =
+{
+  USER_PATIENT: 1,
+  USER_VOLUNTEER: 2
+}
+
+//  site_user is the default item in the app's database
+var site_user = new mongoose.Schema
+({
+  username : String,
+  password_hash : String,
+  email: {
+   type: String,
+   required: true,
+   unique: true
+   },
+  usertype : Number
+})
+
+//  Add unique ID validator to user obj
+site_user.plugin(mongooseValidator)
+
+//  Create a hash from a password
+site_user.virtual('password')
+ .get(function() {
+  return this.passwordHash;
+ })
+ .set(function(pass) {
+  this._password = pass;
+  this.passwordHash = bcrypt.hashSync(pass, 8);
+ })
+ 
+ site_user.path('password_hash').validate(function(pass) {
+ if (this._password.length < 3) {
+  this.invalidate('password', 'Password must be at least 8 characters');
+ }
+})
+
+site_user.methods.validatePassword = function(password) {
+  return bcrypt.compareSync(password, this.password_hash)
+ }
+ site_user.pre('save', function(next) {
+  // Allows us to just pass the form body directly to the model
+  // and removes any properties that don't match the schema.
+  for (prop in this) {
+   if (!site_user.obj.hasOwnProperty(prop)) continue
+   delete this[prop]
+  }
+  next()
+ })
+
+
+var SiteUser = mongoose.model('SiteUser', site_user)
+
+
+/*
+ Server-Side Response for clients registering to the app
+*/
+function registerNewUser(uname, passwd, _email, utype)
+{
+  var usr = new SiteUser({username: uname, password_hash: passwd, email: _email, usertype: utype})
+  db.collection("users").insertOne(usr)
+}
+
+//  This is called when server is started as a test
+//    TODO: the 'register' button at the login page should make RPC requests to registerNewUser() w/ form data
+registerNewUser("test user", "test password", "example@gmail.com", user_type.USER_VOLUNTEER)
+
+/* 
+  3.b) User Management
+*/
+
+//  Add Test User to Database
+//db.collection("users").insertOne(test_user, session)
+
+// module.exports = test_user
+
+
 
 
